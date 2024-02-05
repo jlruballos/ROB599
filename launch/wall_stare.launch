@@ -1,0 +1,29 @@
+<!--
+	Example launch file, showing node starting and topic remapping
+
+	Bill Smart
+
+	This launch file shows how you can start a set of nodes, with topic remapping, using roslaunch,
+	rather than starting them all by individually.
+-->
+
+
+<launch>
+
+	<!-- Start a publisher node, takes in base_scan and filters it and published filtered_scan. -->
+	<node pkg="rob599_hw1" name="filtered_scan" type="scan_front.py">
+	</node>
+
+	<!-- Start the basic_navigation node. -->
+	<node pkg="rob599_hw1" name="basic_navigation" type="basic_navigation.py">
+	</node>
+
+	<!-- Start the laser visualizier node. -->
+	<node pkg="rob599_hw1" name="laser_distance_visualizer" type="laser_visuals.py">
+	</node>
+
+	<!-- Start the laser wall visualizier node. -->
+	<node pkg="rob599_hw1" name="wall_angle_estimator" type="laser_visuals_angle.py">
+	</node>
+
+</launch>
